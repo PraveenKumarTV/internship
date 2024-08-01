@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #007bff;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    fieldset {
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    legend {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="number"],input[type="email"], select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 10px;
+      margin-left: 5px;
+    }
+
+    input[type="file"] {
+      margin-top: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1em;
+      border-radius: 4px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .form-group input[type="text"], .form-group input[type="number"],.form-group input[type="email"], .form-group select {
+      width: calc(100% - 20px);
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    .form-group input[type="radio"], .form-group input[type="checkbox"] {
+      margin-right: 10px;
+      margin-left: 5px;
+    }
+
+    .form-group input[type="file"] {
+      margin-top: 5px;
+    }
+
+    .form-group textarea {
+      width: calc(100% - 20px);
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+      resize: vertical;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1em;
+      border-radius: 4px;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Doctor Registration Form</h1>
+  <form action="/submit" method="POST" enctype="multipart/form-data">
+    <fieldset>
+      <legend>Basic Profile</legend>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="number">Contact Number:</label>
+      <input type="number" id="number" name="number" required><br><br>
+
+      <label for="email">Email ID:</label>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label>Specialization:</label><br>
+      <input type="radio" id="dentist" name="specialization" value="dentist" required>
+      <label for="dentist">Dentist</label><br>
+      <input type="radio" id="ayurveda" name="specialization" value="ayurveda" required>
+      <label for="ayurveda">Ayurveda</label><br>
+      <input type="radio" id="general_surgeon" name="specialization" value="general_surgeon" required>
+      <label for="general_surgeon">General Surgeon</label><br>
+      <input type="radio" id="dermatologist" name="specialization" value="dermatologist" required>
+      <label for="dermatologist">Dermatologist</label><br>
+      <input type="radio" id="pediatrician" name="specialization" value="pediatrician" required>
+      <label for="pediatrician">Pediatrician</label><br><br>
+
+      <label>Gender:</label><br>
+      <input type="radio" id="male" name="gender" value="male" required>
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gender" value="female" required>
+      <label for="female">Female</label><br>
+      <input type="radio" id="other" name="gender" value="other" required>
+      <label for="other">Other</label><br><br>
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Medical Registration</legend>
+      <label for="registrationNum">Registration Number:</label>
+      <input type="text" id="registrationNum" name="registrationNum" required><br><br>
+
+      <label for="council">Council:</label>
+      <select id="council" name="council" required>
+        <option value="tamilnadu">Tamil Nadu</option>
+        <option value="andra_pradesh">Andra Pradesh</option>
+        <option value="kerela">Kerala</option>
+        <option value="karnataka">Karnataka</option>
+        <option value="maharashtra">Maharashtra</option>
+        <!-- Add more options as needed -->
+      </select><br><br>
+
+      <label for="yearOfRegistration">Year of Registration:</label>
+      <input type="number" id="yearOfRegistration" name="yearOfRegistration" required><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Educational Qualification</legend>
+      <label for="degree">Degree:</label>
+      <input type="text" id="degree" name="degree" required><br><br>
+
+      <label for="college">College:</label>
+      <input type="text" id="college" name="college" required><br><br>
+
+      <label for="yearOfCompletion">Year of Completion:</label>
+      <input type="number" id="yearOfCompletion" name="yearOfCompletion" required><br><br>
+
+      <label for="experience">Experience (in years):</label>
+      <input type="number" id="experience" name="experience" required><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Establishment Details</legend>
+      <label>Own or Visit an Establishment:</label><br>
+      <input type="radio" id="own_establishment" name="establishmentType" value="own" required>
+      <label for="own_establishment">Own Establishment</label><br>
+      <input type="radio" id="visit_establishment" name="establishmentType" value="visit" required>
+      <label for="visit_establishment">Visit Establishment</label><br><br>
+
+      <label for="establishmentName">Establishment Name:</label>
+      <input type="text" id="establishmentName" name="establishmentName"><br><br>
+
+      <label for="establishmentCity">Establishment City:</label>
+      <input type="text" id="establishmentCity" name="establishmentCity"><br><br>
+
+      <label for="establishmentLocality">Establishment Locality:</label>
+      <input type="text" id="establishmentLocality" name="establishmentLocality"><br><br>
+    </fieldset>
+    <fieldset>
+      <legend>Appointment Timings</legend>
+      <div class="form-group">
+        <label for="timing1">Available Timing 1:</label>
+        <input type="time" id="timing1" name="timings[]" /><br><br>
+        
+        <label for="timing2">Available Timing 2:</label>
+        <input type="time" id="timing2" name="timings[]" /><br><br>
+        
+        <label for="timing3">Available Timing 3:</label>
+        <input type="time" id="timing3" name="timings[]" /><br><br>
+      </div>
+    </fieldset>
+    
+
+    <fieldset>
+      <legend>Profile Photo</legend>
+      <label for="profilePhoto">Upload Profile Photo:</label>
+      <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*"><br><br>
+    </fieldset>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
