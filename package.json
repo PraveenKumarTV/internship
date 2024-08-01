@@ -1,23 +1,9 @@
 {
-  "name": "doctor-search-app",
-  "version": "1.0.0",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "dotenv": "^16.4.5",
+    "body-parser": "^1.20.2",
     "express": "^4.19.2",
-    "formidable": "^3.5.1",
-    "fs": "^0.0.1-security",
-    "http": "^0.0.1-security",
+    "mongod": "^2.0.0",
     "mongodb": "^6.8.0",
-    "nodemailer": "^6.9.14",
-    "path": "^0.12.7",
-    "url": "^0.11.3"
+    "multer": "^1.4.5-lts.1"
   }
 }
